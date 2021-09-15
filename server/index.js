@@ -18,7 +18,7 @@ const handleLoginFormSubmit = e => {
     d.setTime(d.getTime() + (100 * 24 * 60 * 60 * 1000));
     
     document.cookie = "session=" + btoa(JSON.stringify(user)) + ";expires=" + d.toUTCString() + ";path=/";
-    document.location = "/";
+    document.location = "/xss_toy_site/";
 };
 
 const changeLogin = e => {
@@ -31,7 +31,7 @@ const changeLogin = e => {
 const handlePostFormSubmit = e => {
     e.preventDefault();
 
-    window.location = "/?s=" + btoa(JSON.stringify({username: user.username, text: e.target.post.value}));
+    window.location = "/xss_toy_site/?s=" + btoa(JSON.stringify({username: user.username, text: e.target.post.value}));
 };
 
 const parseCookie = () => {
