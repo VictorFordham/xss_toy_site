@@ -53,7 +53,7 @@ window.onload = () => {
     }
 
     if (params.has("s")) {
-        post = JSON.parse(atob(params.get("s")));
+        post = JSON.parse(atob(decodeURI(params.get("s"))));
         document.getElementById("other").style.display = "none";
 
         document.write(`
