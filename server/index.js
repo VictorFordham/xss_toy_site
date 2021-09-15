@@ -32,7 +32,7 @@ const changeLogin = e => {
 const handlePostFormSubmit = e => {
     e.preventDefault();
 
-    window.location = "/xss_toy_site/?s=" + btoa(JSON.stringify({username: user.username, text: e.target.post.value}));
+    window.location = "/xss_toy_site/?s=" + encodeURI(btoa(JSON.stringify({username: user.username, text: e.target.post.value})));
 };
 
 const parseCookie = () => {
