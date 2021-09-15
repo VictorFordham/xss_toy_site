@@ -1,0 +1,32 @@
+#login-card {
+    width: 20rem;
+    margin: 1rem auto;
+}
+
+#login-form {
+    width: 18rem;
+    margin: 1rem auto;
+}
+
+#new-post {
+    width: 40rem;
+    margin: 1rem auto;
+}
+
+#new-post-form {
+    width: 38rem;
+    margin: 1rem auto;
+}
+
+#submitted-post {
+    width: 40rem;
+    margin: 1rem auto;
+}
+
+#info {
+    margin: 1rem 2rem;
+}
+
+.hidden {
+    display: none;
+}
