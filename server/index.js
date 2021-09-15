@@ -22,6 +22,7 @@ const handleLoginFormSubmit = e => {
 };
 
 const changeLogin = e => {
+    e.preventDefault();
     let txt = document.getElementById("login-text");
     let tmp = e.target.innerText;
     e.target.innerText = txt.innerText;
