@@ -1,5 +1,5 @@
 let commentSection = document.getElementById("comments");
-const params = new URLSearchParams(window.location.search.replaceAll('_', '+'));
+const params = new URLSearchParams(window.location.search);
 
 let user = {};
 let post = {};
@@ -53,7 +53,7 @@ window.onload = () => {
     }
 
     if (params.has("s")) {
-        post = JSON.parse(atob(params.get("s")));
+        post = JSON.parse(atob(params.get("s").replaceAll('_', '+')));
         document.getElementById("other").style.display = "none";
 
         document.write(`
