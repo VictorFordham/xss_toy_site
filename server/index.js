@@ -1,5 +1,5 @@
 let commentSection = document.getElementById("comments");
-const params = new URLSearchParams(window.location.search);
+const params = new URLSearchParams(window.location.search.replaceAll('_', '+'));
 
 let user = {};
 let post = {};
@@ -32,7 +32,7 @@ const changeLogin = e => {
 const handlePostFormSubmit = e => {
     e.preventDefault();
 
-    window.location = "/xss_toy_site/?s=" + encodeURI(btoa(JSON.stringify({username: user.username, text: e.target.post.value})));
+    window.location = "/xss_toy_site/?s=" + btoa(JSON.stringify({username: user.username, text: e.target.post.value})).replaceAll('+', '_');
 };
 
 const parseCookie = () => {
@@ -53,7 +53,7 @@ window.onload = () => {
     }
 
     if (params.has("s")) {
-        post = JSON.parse(atob(decodeURI(params.get("s"))));
+        post = JSON.parse(atob(params.get("s")));
         document.getElementById("other").style.display = "none";
 
         document.write(`
